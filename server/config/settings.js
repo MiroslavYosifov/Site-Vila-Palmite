@@ -12,8 +12,6 @@ module.exports = {
     },
     production: {
         rootPath: roothPath,
-        //101rsG4%2A encode
-        //db: 'mongodb+srv://myosifov193:101rsG4%2A@datavilapalmite-1xcan.gcp.mongodb.net/test?retryWrites=true&w=majority',
         db: 'mongodb://localhost:27017/database',
         port: port
     }
