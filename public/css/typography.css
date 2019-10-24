@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i|Merriweather:400,400i,700,700i&display=swap');
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font: var(--font-size-body, 14px)/1.5 "Fira Sans", Georgia, serif;
+}
+
+
+
+@media ( min-width: 321px ) {
+    html { font-size: var(--font-size-body-smaller, 10px); }
+}
+
+@media ( min-width: 480px ) {
+    html { font-size: var(--font-size-body-small, 11px); }
+}
+
+@media ( min-width: 768px ) {
+    html { font-size: var(--font-size-body-mid, 14px); }
+}
+
+@media ( min-width: 960px ) {
+    html { font-size: var(--font-size-body-larger, 16px); }
+}
+
+@media ( min-width: 1024px ) {
+    html { font-size: var(--font-size-body-big, 16px); }
+}
+
+@media ( min-width: 1600px ) {
+    html { font-size: var(--font-size-body-huge, 24px); }
+}
+
+body, table, form, select, option, input, textarea {
+    font: inherit;
+    background: var(--color-body-bgrd, #FFF);
+    color: var(--color-body-text, #000);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    letter-spacing: 0.01em;
+    font-weight: 100;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--color-h-tags-default);
+}
+
+h1 { font-size: 3.0em; }
+h2 { font-size: 2.4em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; }
+h5 { font-size: 1.2em; }
+h6 { font-size: 1.0em; }
+
+a {
+    text-decoration: none;
+    color: var(--color-link-default, #0A0);
+}
+
+li {
+    list-style: none;
+}
+
+p, ul, ol {
+    padding-bottom: 1.5em;
+    color: var(--color-body-text, #0A0);
+}
+
+ul, ol {
+    padding-left: 2em;
+}
+
+ul ul, ol ul, ul ol, ol ol {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+ol > li > ol > li {
+    list-style-type: lower-roman;
+}
+
+blockquote {
+    padding: 1rem;
+}
+
+blockquote .author {
+    font-style: italic;
+    text-align: right;
+    opacity: 0.5;
+}
+
+blockquote .author:before {
+    display: inline-block;
+    content: '\2014';
+    padding-right: 0.5em;
+}

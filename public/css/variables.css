@@ -1,0 +1,18 @@
+:root {
+    --font-size-body: 8px;
+    --font-size-body-smaller: 10px;
+    --font-size-body-small: 12px;
+    --font-size-body-mid: 16px;
+    --font-size-body-larger: 18px;
+    --font-size-body-big: 18px;
+    --font-size-body-huge: 26px;
+
+    --layout-main-width: 100vw;
+
+    --color-link-default: white;
+    --color-h-tags-default: white;
+    --color-body-text: #000000;
+    --color-fields-background: #316F04;
+    
+    --color-hover: #DE2234;
+}

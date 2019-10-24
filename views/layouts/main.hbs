@@ -10,34 +10,41 @@
 <body>
     <div class="site">
         <header class="site-header">
-            <h1 class="site-title"><a href="/">TITLE</a></h1>
+            <h1 class="site-title"><a href="/">ЛЯТНА ВИЛА ПАЛМИТЕ</a></h1>
             <nav>
                 <ul>
                     <li><a href="/">НАЧАЛО</a></li>
                     <li><a href="/about">ИНФОРМАЦИЯ</a></li>
-                    {{#if currentUser}}
-                        <li>{{currentUser.username}}</li>
+                    <li><a href="/gallery">ГАЛЕРИЯ</a></li>
+                    <li><a href="/price">ЦЕНИ</a></li>
+                    <li><a href="/contacts">КОНТАКТИ</a></li>
+                    {{!-- {{#if currentUser}} --}}
+                        {{!-- <li>{{currentUser.username}}</li>
                         <li>
                             <form id="logout-form" action="/logout" method="POST" ></form>
                             <a href="javascript:document.getElementById('logout-form').submit()">Logout</a>
-                        </li>
-                    {{else}}
-                        <li><a href="/register">Register</a></li>
-                        <li><a href="/login">Login</a></li>
-                    {{/if}}
+                        </li> --}}
+                    {{!-- {{else}} --}}
+                    <li><a href="/login">ВХОД</a></li>
+                    {{!-- {{/if}} --}}
                    
                     
                 </ul>
-                {{#if globalError}}
+                {{!-- {{#if globalError}}
                     <h3>{{globalError}}</h3>
-                {{/if}}
+                {{/if}} --}}
             </nav>
         </header>
-        <main class="site-main">
+        <main class="site-content">
             {{{body}}}
-        </main>TITLE
+        </main>
         <footer class="site-footer">
-            <h1 class="site-title"><a href="/">TITLE</a></h1>
+            <h1 class="site-title"><a href="/">ЛЯТНА ВИЛА ПАЛМИТЕ</a></h1>
+            <section>
+                <p>Телефон: 0889 383 469</p>
+                <p>Адрес: Синеморец, ул. Рибарска</p>
+                <p>E-mail: badgevd@abv.bg </p>
+            </section>
         </footer>
     </div>
 </body>

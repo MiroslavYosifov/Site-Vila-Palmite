@@ -1,0 +1,29 @@
+.site-footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1em 4em;
+    background: var(--color-fields-background);
+}
+
+
+.site-footer .site-title {
+    margin: 0;
+    padding: 0 0 0 0.5em;
+}
+
+.site-footer .site-title a {
+    display: block;
+    font-size: 0.4em;
+}
+
+.site-footer section {
+    display: flex;
+    margin-left: auto;
+}
+
+.site-footer section p {
+    padding: 0;
+    margin-left: 2em;
+    color: white;
+}

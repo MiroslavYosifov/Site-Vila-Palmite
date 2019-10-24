@@ -10,6 +10,10 @@ module.exports = (app) => {
     app.post('/login', controllers.users.postLogin);
     app.get('/register', controllers.users.getRegister);
     app.post('/register', controllers.users.postRegister);
+
+    app.get('/contacts', controllers.home.contacts);
+    app.get('/price', controllers.home.price);
+    app.get('/gallery', controllers.home.gallery);
     app.get('/about', controllers.home.about);
     app.get('/', controllers.home.index);
 

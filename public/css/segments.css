@@ -1,0 +1,93 @@
+.segment {
+    width: 100%;
+    background: white;
+    padding: 1em 4em;
+}
+
+.segment h3 {
+    text-align: center;
+    padding: 0 0 0 0;
+    width: 100%;
+}
+
+.segment p {
+    font-size: 1em; 
+}
+
+/* text */
+
+.segment.text-content {
+    text-align: center;
+}
+
+.segment.text-content p {
+    padding: 0;
+    margin: 0;
+}
+
+.segment.text-content.color {
+    background: #97B680;
+}
+
+.segment.text-content.color.title p {
+    color: white;
+    font-size: 2.5em;
+}
+
+/* slides segment */
+
+.segment.slides.color {
+    position: relative;
+    background: #97B680;
+}
+
+.segment.slides > i {
+    display: block;
+    margin-right: 0.5em;
+    position: absolute;
+    top: 45%; right: 0;
+    font-size: 3em;
+    color: var(--color-link-default);
+    cursor: pointer;
+}
+
+.segment .list-cards {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.segment .list-cards .card-content {
+    width: 33%;
+    padding: 0 2em;
+    flex-shrink: 0;
+}
+
+.segment .list-cards .card-content .card-media-content {
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.segment .list-cards .card-content .card-media-content:before {
+    display: block;
+    content: '';
+    padding: 50%;
+}
+
+.segment .list-cards .card-content .card-media-content.landscape:before {
+    padding: 33%;
+}
+
+.segment .list-cards .card-content .card-media-content img {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: auto;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}

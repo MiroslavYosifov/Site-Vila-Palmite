@@ -13,13 +13,13 @@ function postLogin (req, res, next) {
         if(!user) {
             res.locals.globalError = "Invalid user data";
             res.render('users/login.hbs');
-            return
+            return;
         }
 
         if(!user.authenticate(reqUser.password)) {
             res.locals.globalError = "Invalid user data";
             res.render('users/login.hbs');
-            return
+            return;
         }
 
         req.logIn(user, (err, user) => {

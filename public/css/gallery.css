@@ -1,0 +1,27 @@
+.gallery-content {
+    padding: 4em;
+}
+.gallery {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+}
+
+.gallery span,
+.gallery img {
+    display: block;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery li {
+    display: block;
+    list-style: none outside;
+    position: relative;
+    overflow: hidden;
+}
