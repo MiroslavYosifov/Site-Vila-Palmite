@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const User = require('../models/user');
 
 module.exports = (settings) => {
+    
     mongoose.connect(settings.db);
-
     let db = mongoose.connection;
 
     db.once('open', (err) => {
