@@ -21,6 +21,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
+    cursor: pointer;
 }
 
 .about-content > .media-content .media:before,
