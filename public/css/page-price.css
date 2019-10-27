@@ -9,7 +9,7 @@
 .price-content header  h3 {
     margin: 0;
     padding: 0;
-    color: #316F04;
+    color: var(--color-body-second-text);
     font-weight: bold;
 }
 
@@ -27,15 +27,14 @@
 .price-content table tr td {
     padding: 0.5em 2.5em;
     border: 2px solid rgb(150, 150, 150);
-
 }
 
 .price-content table tr th {
-    background: #316F04;
-    color: white;
+    background: var(--color-fields-main-background);
+    color: var(--color-body-third-text);
 }
 
 .price-content table tr td {
-    color: #316F04;
+    color: var(--color-body-second-text);
     font-weight: bold;
 }

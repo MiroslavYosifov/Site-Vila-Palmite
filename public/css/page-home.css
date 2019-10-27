@@ -1,19 +1,7 @@
 .segment {
     width: 100%;
-    background: white;
     padding: 1em 4em;
 }
-
-.segment h3 {
-    text-align: center;
-    padding: 0 0 0 0;
-    width: 100%;
-}
-
-.segment p {
-    font-size: 1em; 
-}
-
 /* text */
 
 .segment.text-content {
@@ -26,11 +14,11 @@
 }
 
 .segment.text-content.color {
-    background: #97B680;
+    background: var(--color-fields-second-background);
 }
 
 .segment.text-content.color.title p {
-    color: white;
+    color: var(--color-body-third-text);
     font-size: 2.5em;
 }
 
@@ -40,7 +28,7 @@
 .segment.slides.color {
     position: relative;
     padding: 3em 4em 3em 2em;
-    background: #97B680;
+    background: var(--color-fields-second-background);
 }
 
 .segment.slides > i {
@@ -49,7 +37,7 @@
     position: absolute;
     top: 45%; right: 0;
     font-size: 3em;
-    color: var(--color-link-default);
+    color: var(--color-body-second-text);
     cursor: pointer;
 }
 
@@ -94,7 +82,3 @@
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
 }
-
-/* contacts */
-
-

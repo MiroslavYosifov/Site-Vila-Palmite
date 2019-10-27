@@ -6,7 +6,7 @@
     
 }
 
-.segment.contacts {
+.contacts-content {
     padding: 0;
     margin: 0;
     display: flex;
@@ -22,10 +22,8 @@
 }
 
 .contacts-info header h4 {
-    color: #316F04;
     text-align: center;
 }
-
 
 .contacts-info ul {
     
@@ -39,7 +37,7 @@
 
 .contacts-info ul li p,
 .contacts-info ul li i {
-    color: #316F04;
+    color: var(--color-body-second-text);
     padding: 0;
     margin: 0;
 }

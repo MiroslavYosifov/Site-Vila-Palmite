@@ -10,9 +10,14 @@
     --layout-main-width: 100vw;
 
     --color-link-default: white;
-    --color-h-tags-default: white;
-    --color-body-text: #000000;
-    --color-fields-background: #316F04;
-    
+    --color-h-tags-default: #316F04;
+    --color-h-tags-second: white;
+    --color-body-main-text: #000000;
+    --color-body-second-text: #316F04;
+    --color-body-third-text: white;
+    --color-fields-main-background: #316F04;
+    --color-fields-second-background: #97B680;
+    --color-fields-after-background: rgba(255, 255, 255, 0.6);
+
     --color-hover: #DE2234;
 }
