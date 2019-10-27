@@ -12,6 +12,7 @@
 .gallery span,
 .gallery img {
     display: block;
+    cursor: pointer;
 }
 
 .gallery img {
