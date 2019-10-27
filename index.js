@@ -1,4 +1,6 @@
-let env = process.env.NODE_ENV || 'production';
+//let env = process.env.NODE_ENV || 'production';
+let env = process.env.NODE_ENV || 'development';
+
 let settings = require('./server/config/settings')[env];
 
 //const app = require('express')();

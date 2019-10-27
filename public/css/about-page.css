@@ -1,0 +1,46 @@
+.about-content {
+    display: flex;
+    padding: 4em;
+}
+
+.about-content > .text-content {
+    width: 50%;
+}
+
+.about-content > .text-content p {
+    
+}
+
+.about-content > .media-content {
+    width: 50%;
+    padding-left: 4em;
+}
+
+.about-content > .media-content .media {
+    background: red;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.about-content > .media-content .media:before,
+.about-content > .media-content .media:after {
+    display: block;
+    content: '';
+}
+
+.about-content > .media-content .media:before {
+    padding-top: 60%;
+}
+
+.about-content > .media-content .media:first-child {
+    margin-bottom: 4em;
+}
+
+.about-content > .media-content .media img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0; right: 0;
+}

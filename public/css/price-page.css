@@ -1,0 +1,41 @@
+.price-content {
+}
+
+.price-content header {
+    text-align: center;
+    margin: 2em 0;
+}
+
+.price-content header  h3 {
+    margin: 0;
+    padding: 0;
+    color: #316F04;
+    font-weight: bold;
+}
+
+.price-content table {
+    margin: 0 auto 4em auto;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.price-content table tr {
+
+}
+
+.price-content table tr th,
+.price-content table tr td {
+    padding: 0.5em 2.5em;
+    border: 2px solid rgb(150, 150, 150);
+
+}
+
+.price-content table tr th {
+    background: #316F04;
+    color: white;
+}
+
+.price-content table tr td {
+    color: #316F04;
+    font-weight: bold;
+}

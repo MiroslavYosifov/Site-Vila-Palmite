@@ -1,5 +1,9 @@
 @import url('typography.css');
 @import url('layouts.css');
+@import url('about-page.css');
+@import url('contact-page.css');
+@import url('price-page.css');
+
 
 @import url('site-header.css');
 @import url('site-footer.css');
@@ -8,5 +12,6 @@
 @import url('gallery.css');
 @import url('segments.css');
 @import url('variables.css');
+
 
 

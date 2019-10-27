@@ -1,0 +1,50 @@
+.contact-content .main-background-map:before {
+    padding-top: 100vh;
+}
+
+.contact-content .main-background-map:before {
+    
+}
+
+.segment.contacts {
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.contacts-info {
+    padding: 8em 2em 3em 2em;
+    width: 30%;
+}
+
+.contacts-info header {
+    padding-bottom: 2em;
+}
+
+.contacts-info header h4 {
+    color: #316F04;
+    text-align: center;
+}
+
+
+.contacts-info ul {
+    
+}
+
+.contacts-info ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.contacts-info ul li p,
+.contacts-info ul li i {
+    color: #316F04;
+    padding: 0;
+    margin: 0;
+}
+
+.contacts-info ul li > i {
+    font-size: 1.4em;
+    margin-right: 1em;
+}

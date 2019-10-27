@@ -34,10 +34,12 @@
     font-size: 2.5em;
 }
 
+
 /* slides segment */
 
 .segment.slides.color {
     position: relative;
+    padding: 3em 4em 3em 2em;
     background: #97B680;
 }
 
@@ -61,7 +63,8 @@
 
 .segment .list-cards .card-content {
     width: 33%;
-    padding: 0 2em;
+    padding: 0;
+    padding-left: 2em;
     flex-shrink: 0;
 }
 
@@ -86,43 +89,12 @@
 .segment .list-cards .card-content .card-media-content img {
     position: absolute;
     display: block;
-    height: 100%;
-    width: auto;
+    height: auto;
+    width: 100%;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
 }
 
 /* contacts */
 
-.segment.contacts {
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
 
-.contacts-info {
-    padding: 3em 2em;
-    width: 30%;
-}
-
-.contacts-info header {
-    padding-bottom: 2em;
-}
-
-.contacts-info header h4 {
-    color: #316F04;
-    text-align: center;
-}
-
-
-.contacts-info ul {
-    
-}
-
-.contacts-info ul li {
-    
-}
-
-.contacts-info ul li p {
-    color: #316F04;
-}
