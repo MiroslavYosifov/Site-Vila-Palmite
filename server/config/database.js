@@ -13,6 +13,5 @@ module.exports = (settings) => {
         console.log('MongoDB Ready');
         User.seedAdminUser();
     });
-
     db.on('error', err => console.log(`Database error: ${err}`));
 }

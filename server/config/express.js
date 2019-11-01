@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require('passport');
 const handlebars = require('express-handlebars');
+const multer = require("multer");
 
 
 module.exports = (app) => {

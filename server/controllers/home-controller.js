@@ -20,10 +20,7 @@ function price (req, res, next) {
     res.render('home/price.hbs');
 }
 
-function gallery (req, res, next) {
-    const user = req.user;
-    res.render('home/gallery.hbs');
-}
+
 
 
 module.exports = {
@@ -31,5 +28,4 @@ module.exports = {
     about,
     contacts,
     price,
-    gallery
 }

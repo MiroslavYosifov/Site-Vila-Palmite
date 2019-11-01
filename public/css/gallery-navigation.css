@@ -1,0 +1,76 @@
+.gallery-navigation {
+    /* background: lightgray; */
+    padding: 0 2.5em;
+    margin: 2em 0 0 0;
+}
+
+.gallery-navigation form {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    background: none;
+    border: 1px solid lightgray;
+}
+
+.gallery-navigation form p {
+    margin: 0 0 0 1em;
+    padding: 0;
+}
+
+.gallery-navigation form p:first-child {
+    margin-left: auto;
+}
+
+.gallery-navigation form p:last-child {
+    margin-right: auto;
+}
+
+
+.gallery-navigation form label {
+    
+}
+
+.gallery-navigation form input {
+   
+}
+
+.input-file {
+    cursor: pointer;
+    border: 1px solid gray;
+}
+
+/* .input-file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+    position: absolute;
+	z-index: -1;
+}
+
+.label-file {
+    display: block;
+    padding: 0.5em;
+    border: 1px solid black;
+    background: rgb(40, 101, 141);
+    color: white;
+} */
+
+.input-button {
+    padding: 0 0.5em;
+    border: 1px solid rgb(231, 45, 85);
+    background: white;
+    color:  rgb(231, 45, 85);
+}
+
+.input-button:hover {
+    padding: 0 0.5em;
+    border: 1px solid rgb(231, 45, 85);
+    background: rgb(231, 45, 85);
+    color: white;
+    cursor: pointer;
+}
+
+
+
+

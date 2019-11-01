@@ -1,0 +1,27 @@
+<main>
+    <section class="main-background-media small">
+        <img src="/images/DSC_0012.JPG" alt="">
+    </section>
+    <section class="gallery-navigation">
+        <form action='/gallery/upload/image' method="POST" enctype="multipart/form-data">
+            <p> 
+                <label for="title">Image title</label>
+                <input type="text" id="title" name="title">
+            </p>
+            <p>
+                <label class="label-file " for="photo">Choose a file</label>
+                <input class="input-file" type="file" id="photo" name="photo" >        
+            </p>
+            <p>
+                <input class="input-button" type="submit" value="Add Image">
+            </p>
+        </form>
+    </section>
+    <div class="gallery-content">
+        <ul class="gallery">
+            {{#each convertedImages}}
+            <li onclick="showHideImage(event)"><span><img src="data:{{this.contentType}};base64, {{this.photoBufferData}}" alt="Red dot" /></span></li>
+            {{/each}}
+        </ul>    
+    </div>
+</main>

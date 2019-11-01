@@ -1,6 +1,6 @@
 // Slides
 
-let clickDoctors = 1;
+let clicks = 1;
 
 function moveSlides(e){
 
@@ -15,16 +15,16 @@ function moveSlides(e){
 
     for (let i = 0; i < dataSlides.length; i++) {
         dataSlides[i].style.transition = 'transform 1s ease-in-out';
-        dataSlides[i].style.transform = `translateX(${-100 * clickDoctors}%)`;
+        dataSlides[i].style.transform = `translateX(${-100 * clicks}%)`;
     }
-    if(clickDoctors === dataSlides.length-slidesToMove){
-        clickDoctors = 0;
+    if(clicks === dataSlides.length-slidesToMove){
+        clicks = 0;
         for (let i = 0; i < dataSlides.length; i++) {
             dataSlides[i].style.transition = 'transform 1s ease-in-out';
-            dataSlides[i].style.transform = `translateX(${-100 * clickDoctors}%)`;
+            dataSlides[i].style.transform = `translateX(${-100 * clicks}%)`;
         }
     }
-    clickDoctors ++;   
+    clicks ++;   
 }
 
 // Gallery
