@@ -7,6 +7,7 @@ const galleryImagesSchema = new mongoose.Schema({
     photoBufferData: { type: Buffer },
     contentType: { type: String, required: REQUIRED_VALIDATION_MESSAGE },
     description: { type: String},
+    roles: [String]
 });
 
 module.exports = mongoose.model('galleryImages', galleryImagesSchema);

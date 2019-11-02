@@ -1,10 +1,22 @@
 <main>
     <section class="main-background-media">
-        <img src="/images/DSC_0002.JPG" alt="">
+        <img src="data:{{convertedImageBackground.contentType}};base64, {{convertedImageBackground.photoBufferData}}" alt="Red dot" />
         <section class="main-background-text">
             <h2>ЛЯТНА ВИЛА</h2>
             <h1>"ПАЛМИТЕ"</h1>
         </section>
+    </section>
+    <section class="gallery-navigation">
+        <form action='/gallery/change/image/{{convertedImageBackground._id}}' method="POST">
+            <select name="selectedImage">
+            {{#each convertedImages}}
+            <option value="{{this._id}}">{{this.title}}</option>
+            {{/each}} 
+            </select>
+            <p>
+                <input class="input-button" type="submit" value="Change Background">
+            </p>
+        </form>
     </section>
     <section class="segment text-content color title">
         <p>Всичко необходимо</p>

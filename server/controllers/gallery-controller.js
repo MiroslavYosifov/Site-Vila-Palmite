@@ -5,7 +5,7 @@ function getGallery (req, res, next) {
     const user = req.user;
     models.galleryImagesModel.find().then(images => {
         let convertedImages = images.map((val) => {
-            val.photoBufferData= val.photoBufferData.toString('base64');
+            val.photoBufferData = val.photoBufferData.toString('base64');
             return val; 
         });
         res.render('gallery/gallery.hbs', { convertedImages });
@@ -28,7 +28,7 @@ function postUploadImage(req, res) {
         res.redirect('/gallery');
     }).catch(err => {
         console.log(err);
-    })
+    });
 }
 
 function deleteImage (req, res) {
@@ -36,11 +36,26 @@ function deleteImage (req, res) {
     
     models.galleryImagesModel.deleteOne({ _id: imageId }).then(image => {
         res.redirect('/gallery');
+    });
+}
+
+function postChangeImage (req, res) {
+    const currentImageId = req.params.id;
+    const newImageId = req.body.selectedImage;
+    models.galleryImagesModel.update({ _id: currentImageId }, { $pull: { roles: { $in: "HomePageBackground" } }}).then(curImage => {
+        models.galleryImagesModel.update({ _id: newImageId }, { $addToSet: { roles: "HomePageBackground" }}).then(newImage => {
+            res.redirect('/');
+        }).catch(err => {
+            console.log(err);
+        });
+    }).catch(err => {
+        console.log(err);
     })
 }
 
 module.exports = {
     getGallery,
     postUploadImage,
-    deleteImage
+    deleteImage,
+    postChangeImage,
 }

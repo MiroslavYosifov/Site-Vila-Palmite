@@ -1,6 +1,6 @@
 .gallery-navigation {
     /* background: lightgray; */
-    padding: 0 2.5em;
+    padding: 0 2.5em 2em 2.5em;
     margin: 2em 0 0 0;
 }
 
@@ -64,6 +64,22 @@
 }
 
 .input-button:hover {
+    padding: 0 0.5em;
+    border: 1px solid rgb(231, 45, 85);
+    background: rgb(231, 45, 85);
+    color: white;
+    cursor: pointer;
+}
+
+.link-button {
+    display: block;
+    padding: 0 0.5em;
+    border: 1px solid rgb(231, 45, 85);
+    background: white;
+    color:  rgb(231, 45, 85);
+}
+
+.link-button:hover {
     padding: 0 0.5em;
     border: 1px solid rgb(231, 45, 85);
     background: rgb(231, 45, 85);
