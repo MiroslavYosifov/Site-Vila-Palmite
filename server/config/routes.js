@@ -13,6 +13,7 @@ module.exports = (app) => {
     app.post('/gallery/upload/image', multer(multerConf).single('photo'), controllers.gallery.postUploadImage);
     app.get('/gallery/delete/image/:id', controllers.gallery.deleteImage);
     app.post('/gallery/change/image/:id', controllers.gallery.postChangeImage);
+    app.post('/gallery/change/image', controllers.gallery.postChangeImage);
     
     app.post('/logout', controllers.users.logout);
     app.get('/login', controllers.users.getLogin);
