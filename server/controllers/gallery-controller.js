@@ -31,7 +31,16 @@ function postUploadImage(req, res) {
     })
 }
 
+function deleteImage (req, res) {
+    const imageId = req.params.id;
+    
+    models.galleryImagesModel.deleteOne({ _id: imageId }).then(image => {
+        res.redirect('/gallery');
+    })
+}
+
 module.exports = {
     getGallery,
-    postUploadImage
+    postUploadImage,
+    deleteImage
 }

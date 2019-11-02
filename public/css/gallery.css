@@ -9,6 +9,17 @@
     grid-gap: 2em;
 }
 
+.gallery li {
+    display: block;
+    list-style: none outside;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid white;
+    transform: scale(1);
+    box-shadow: 0 0 0.4em 0.4em rgba(73, 73, 73, 0);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border 0.4s ease-in-out;
+}
+
 .gallery span,
 .gallery img {
     display: block;
@@ -20,13 +31,11 @@
     height: auto;
 }
 
-.gallery li {
-    display: block;
-    list-style: none outside;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid white;
-    transform: scale(1);
-    box-shadow: 0 0 0.4em 0.4em rgba(73, 73, 73, 0);
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border 0.4s ease-in-out;
+.gallery .link-button {
+    position: absolute;
+    top: 0; right: 0;
+    background: red;
+    color: white;
+    z-index: 1;
 }
+

@@ -26,15 +26,13 @@
     height: auto;
 }
 
-.modal .inner button{
+.modal .inner button {
     position: absolute;
     display: block;
     top: 0; right: 0;
-    width: 1.5em;
-    height: 1.5em;
     margin: 0.5em;
+    padding: 0;
     border: none;
-    border-radius: 50%;
     background: rgb(255, 180, 180);
     color: white;
     font-weight: bold;

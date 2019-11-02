@@ -20,7 +20,10 @@
     <div class="gallery-content">
         <ul class="gallery">
             {{#each convertedImages}}
-            <li onclick="showHideImage(event)"><span><img src="data:{{this.contentType}};base64, {{this.photoBufferData}}" alt="Red dot" /></span></li>
+            <li onclick="showHideImage(event)">
+                <span><img src="data:{{this.contentType}};base64, {{this.photoBufferData}}" alt="Red dot" /></span>
+                <a class="link-button" href="/gallery/delete/image/{{this._id}}">Delete Image</a>
+            </li>
             {{/each}}
         </ul>    
     </div>

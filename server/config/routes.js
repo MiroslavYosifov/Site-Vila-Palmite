@@ -11,6 +11,7 @@ module.exports = (app) => {
     app.get('/gallery', controllers.gallery.getGallery);
     // app.get('/gallery/upload/image', controllers.gallery.getUploadImage);
     app.post('/gallery/upload/image', multer(multerConf).single('photo'), controllers.gallery.postUploadImage);
+    app.get('/gallery/delete/image/:id', controllers.gallery.deleteImage);
     
     app.post('/logout', controllers.users.logout);
     app.get('/login', controllers.users.getLogin);

@@ -46,7 +46,7 @@ function moveSlides(e){
 // }
 
 function showHideImage(e) {
-    e.preventDefault();
+    // e.preventDefault();
     let modal = document.getElementsByClassName('modal')[0];
     // console.log(modal);
     // console.log(e.target);
