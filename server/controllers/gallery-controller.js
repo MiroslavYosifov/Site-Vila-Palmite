@@ -58,7 +58,7 @@ function postChangeImage (req, res) {
     const newImageId = req.body.selectedImage;
     const role = req.body.selectedPage;
 
-    models.galleryImagesModel.update({ _id: currentImageId }, { $pull: { roles: { $in: role } }}).then(curImage => {
+    models.galleryImagesModel.updateMany({}, { $pull: { roles: { $in: role } }}).then(curImage => {
         models.galleryImagesModel.update({ _id: newImageId }, { $addToSet: { roles: role }}).then(newImage => {
             if(role === "HomePage") { res.redirect('/');
             } else if (role === "AboutPage") {
