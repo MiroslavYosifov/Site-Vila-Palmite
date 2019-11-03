@@ -20,6 +20,15 @@
     transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border 0.4s ease-in-out;
 }
 
+.gallery li p {
+    position: absolute;
+    top: 0; left: 0;
+    background: black;
+    padding: 0 0.2em;
+    color: white;
+    z-index: 1;
+}
+
 .gallery span,
 .gallery img {
     display: block;

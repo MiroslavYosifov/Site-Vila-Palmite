@@ -53,6 +53,7 @@
             {{#each convertedImages}}
             <li onclick="showHideImage(event)">
                 <span><img src="data:{{this.contentType}};base64, {{this.photoBufferData}}" alt="Red dot" /></span>
+                <p>Title: {{this.title}}</p>
                 <a class="link-button" href="/gallery/delete/image/{{this._id}}">Delete Image</a>
             </li>
             {{/each}}
