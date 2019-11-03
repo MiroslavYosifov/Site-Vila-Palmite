@@ -5,8 +5,6 @@ const REQUIRED_VALIDATION_MESSAGE = '{PATH} is required';
 
 const userSchema = new mongoose.Schema({
     username: { type: String, required: REQUIRED_VALIDATION_MESSAGE },
-    firstName: { type: String, required: REQUIRED_VALIDATION_MESSAGE },
-    lastName: { type: String, required: REQUIRED_VALIDATION_MESSAGE },
     salt: { type: String },
     hashedPass: { type: String },
     roles: [String]
@@ -28,9 +26,7 @@ module.exports.seedAdminUser = () => {
         let hashedPass = encryption.generateHashedPassword(salt, '123456');
 
         User.create({
-            username: 'Admin',
-            firstName: 'Admin',
-            lastName: 'Admin',
+            username: 'Kristin',
             salt: salt,
             hashedPass: hashedPass,
             roles: ['Admin']

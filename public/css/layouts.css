@@ -2,4 +2,9 @@
     position: relative;
     margin: 0 auto;
     max-width: var(--layout-main-width);
+    min-height: var(--layout-main-height);
+}
+
+.site-content {
+    height: stretch;
 }

@@ -28,7 +28,7 @@ function postLogin (req, res, next) {
                 res.render('users/login.hbs');
                 return
             }
-            res.redirect('/');
+            res.redirect('/gallery');
         });
     });
 }

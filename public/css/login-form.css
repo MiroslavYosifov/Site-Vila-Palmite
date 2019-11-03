@@ -1,0 +1,25 @@
+.form {
+    margin: 0 auto;
+    padding: 4em 6em;
+}
+
+.form header {
+    text-align: right;
+}
+
+.form form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form form p {
+    padding: 0 0.5em;
+}
+
+.form form p:first-child {
+    margin-left: auto;
+}
+
+.form form p:last-child {
+    padding-right: 0;
+}

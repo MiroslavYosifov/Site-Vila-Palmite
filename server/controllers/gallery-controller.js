@@ -27,8 +27,13 @@ function getGallery (req, res, next) {
 function postUploadImage(req, res) {
     const { title } = req.body;
     if(req.file) {
-        // console.log(req.file);
+        // console.log(req.file.filename);
         req.body.photo = req.file.filename;
+    }
+
+    if (!req.file) {
+        res.redirect('/gallery');
+        return;
     }
     
     const photoBufferData = fs.readFileSync(`./public/upload/${req.file.filename}`);
@@ -52,9 +57,17 @@ function postChangeImage (req, res) {
     const currentImageId = req.params.id;
     const newImageId = req.body.selectedImage;
     const role = req.body.selectedPage;
+
     models.galleryImagesModel.update({ _id: currentImageId }, { $pull: { roles: { $in: role } }}).then(curImage => {
         models.galleryImagesModel.update({ _id: newImageId }, { $addToSet: { roles: role }}).then(newImage => {
-            res.redirect('/gallery');
+            if(role === "HomePage") { res.redirect('/');
+            } else if (role === "AboutPage") {
+                res.redirect('/about');
+            } else if (role === "GalleryPage") {
+                res.redirect('/gallery');
+            } else if (role === "PricePage") {
+                res.redirect('/price');
+            } 
         }).catch(err => {
             console.log(err);
         });

@@ -29,22 +29,6 @@ function moveSlides(e){
 
 // Gallery
 
-// function showImage (e){
-//     e.preventDefault();
-//     console.log(e.target);
-//     let imgUrl = e.target.src;
-//     console.log(imgUrl);
-//     let modal = document.getElementsByClassName('modal')[0];
-//     let modalUrl = document.getElementsByClassName('inner')[0].childNodes[1].childNodes[0];
-//     modalUrl.src = imgUrl;
-//     modal.style.display = "flex";  
-// }
-
-// function hideImage (e){
-//     let modal = document.getElementsByClassName('modal')[0];
-//     modal.style.display = "none";
-// }
-
 function showHideImage(e) {
     // e.preventDefault();
     let modal = document.getElementsByClassName('modal')[0];

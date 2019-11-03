@@ -6,7 +6,7 @@ module.exports = {
             next(null, './public/upload');
         },
         filename: function (req, file, next) {
-            //console.log(file);
+            // console.log(file);   
             const ext = file.mimetype.split('/')[1];
             next(null, file.fieldname + '-' + Date.now() + '.' +ext);
         }  

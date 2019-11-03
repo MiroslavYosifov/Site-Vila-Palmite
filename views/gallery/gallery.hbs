@@ -2,26 +2,37 @@
     <section class="main-background-media small">
          <img src="data:{{convertedImageBackground.contentType}};base64, {{convertedImageBackground.photoBufferData}}" alt="Red dot" />
     </section>
+    {{#if currentUser}}
     <section class="gallery-navigation">
         <form action='/gallery/change/image/{{convertedImageBackground._id}}' method="POST">
-            <select name="selectedImage">
-            {{#each convertedImages}}
-            <option value="{{this._id}}">{{this.title}}</option>
-            {{/each}} 
-            </select>
-            <select name="selectedPage">
-                <option value="HomePage">Home Page</option>
-                <option value="AboutPage">About Page</option>
-                <option value="GalleryPage">Gallery Page</option>
-                <option value="PricePage">Price Page</option>
-            </select>
+            <header>
+                <h5>Change background</h5>
+            </header>
+            <p>
+                <label>Choose image title</label>
+                <select name="selectedImage">
+                {{#each convertedImages}}
+                <option value="{{this._id}}">{{this.title}}</option>
+                {{/each}} 
+                </select>
+            </p>
+            <p>
+                <label>Choose page</label>
+                <select name="selectedPage">
+                    <option value="HomePage">Home Page</option>
+                    <option value="AboutPage">About Page</option>
+                    <option value="GalleryPage">Gallery Page</option>
+                    <option value="PricePage">Price Page</option>
+                </select>
+            </p>
             <p>
                 <input class="input-button" type="submit" value="Change Background">
             </p>
         </form>
-    </section>
-    <section class="gallery-navigation">
         <form action='/gallery/upload/image' method="POST" enctype="multipart/form-data">
+            <header>
+                <h5>Upload image</h5>
+            </header>
             <p> 
                 <label for="title">Image title</label>
                 <input type="text" id="title" name="title">
@@ -35,14 +46,23 @@
             </p>
         </form>
     </section>
+    {{/if}}
     <div class="gallery-content">
         <ul class="gallery">
+            {{#if currentUser}}
             {{#each convertedImages}}
             <li onclick="showHideImage(event)">
                 <span><img src="data:{{this.contentType}};base64, {{this.photoBufferData}}" alt="Red dot" /></span>
                 <a class="link-button" href="/gallery/delete/image/{{this._id}}">Delete Image</a>
             </li>
             {{/each}}
+            {{else}}
+            {{#each convertedImages}}
+            <li onclick="showHideImage(event)">
+                <span><img src="data:{{this.contentType}};base64, {{this.photoBufferData}}" alt="Red dot" /></span>
+            </li>
+            {{/each}}
+            {{/if}}
         </ul>    
     </div>
 </main>
