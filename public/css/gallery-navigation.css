@@ -63,37 +63,16 @@
     color: white;
 } */
 
+.link-button,
 .input-button {
-    padding: 0 0.5em;
-    border: 1px solid rgb(231, 45, 85);
-    background: white;
-    color:  rgb(231, 45, 85);
-}
-
-.input-button:hover {
-    padding: 0 0.5em;
-    border: 1px solid rgb(231, 45, 85);
-    background: rgb(231, 45, 85);
-    color: white;
-    cursor: pointer;
-}
-
-.link-button {
     display: block;
     padding: 0 0.5em;
-    border: 1px solid rgb(231, 45, 85);
-    background: white;
-    color:  rgb(231, 45, 85);
-}
-
-.link-button:hover {
-    padding: 0 0.5em;
-    border: 1px solid rgb(231, 45, 85);
-    background: rgb(231, 45, 85);
-    color: white;
+    border: 1px solid var(--color-main-button);
+    background: var(--color-second-button);
+    color:  var(--color-main-button);
     cursor: pointer;
+    
 }
-
 
 
 
