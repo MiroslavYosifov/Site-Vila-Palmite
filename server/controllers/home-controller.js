@@ -2,14 +2,9 @@ const models = require('../models/index');
 
 function index (req, res, next) {
     const user = req.user;
-    models.galleryImagesModel.find({ roles: { $in: ["HomePageBackground"] } }).then(imagesBackground => {
-        models.galleryImagesModel.find().then(images => {
+    models.galleryImagesModel.find({ roles: { $in: ["HomePage"] } }).then(imagesBackground => {
+        models.galleryImagesModel.find().then(convertedImages => {
             let convertedImagesBackground = imagesBackground.map((val) => {
-                val.photoBufferData = val.photoBufferData.toString('base64');
-                return val; 
-            });
-
-            let convertedImages = images.map((val) => {
                 val.photoBufferData = val.photoBufferData.toString('base64');
                 return val; 
             });
@@ -26,7 +21,21 @@ function index (req, res, next) {
 
 function about (req, res, next) {
     const user = req.user;
-    res.render('home/about.hbs');
+    models.galleryImagesModel.find({ roles: { $in: ["AboutPage"] } }).then(imagesBackground => {
+        models.galleryImagesModel.find().then(convertedImages => {
+            let convertedImagesBackground = imagesBackground.map((val) => {
+                val.photoBufferData = val.photoBufferData.toString('base64');
+                return val; 
+            });
+            let convertedImageBackground = convertedImagesBackground[0];
+            res.render('home/about.hbs', { convertedImageBackground, convertedImages });
+        }).catch(err => {
+            console.log(err);
+        });
+        
+    }).catch(err => {
+        console.log(err);
+    });
 }
 
 
@@ -38,7 +47,21 @@ function contacts (req, res, next) {
 
 function price (req, res, next) {
     const user = req.user;
-    res.render('home/price.hbs');
+    models.galleryImagesModel.find({ roles: { $in: ["PricePage"] } }).then(imagesBackground => {
+        models.galleryImagesModel.find().then(convertedImages => {
+            let convertedImagesBackground = imagesBackground.map((val) => {
+                val.photoBufferData = val.photoBufferData.toString('base64');
+                return val; 
+            });
+            let convertedImageBackground = convertedImagesBackground[0];
+            res.render('home/price.hbs', { convertedImageBackground, convertedImages });
+        }).catch(err => {
+            console.log(err);
+        });
+        
+    }).catch(err => {
+        console.log(err);
+    });
 }
 
 

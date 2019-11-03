@@ -3,15 +3,25 @@ const fs = require('fs');
 
 function getGallery (req, res, next) {
     const user = req.user;
-    models.galleryImagesModel.find().then(images => {
-        let convertedImages = images.map((val) => {
-            val.photoBufferData = val.photoBufferData.toString('base64');
-            return val; 
+    models.galleryImagesModel.find({ roles: { $in: ["GalleryPage"] } }).then(imagesBackground => {
+        models.galleryImagesModel.find().then(images => {
+            let convertedImagesBackground = imagesBackground.map((val) => {
+                val.photoBufferData = val.photoBufferData.toString('base64');
+                return val; 
+            });
+            let convertedImages = images.map((val) => {
+                val.photoBufferData = val.photoBufferData.toString('base64');
+                return val; 
+            });
+            let convertedImageBackground = convertedImagesBackground[0];
+            res.render('gallery/gallery.hbs', { convertedImageBackground, convertedImages });
+        }).catch(err => {
+            console.log(err);
         });
-        res.render('gallery/gallery.hbs', { convertedImages });
+        
     }).catch(err => {
         console.log(err);
-    })
+    });
 }
 
 function postUploadImage(req, res) {
@@ -33,7 +43,6 @@ function postUploadImage(req, res) {
 
 function deleteImage (req, res) {
     const imageId = req.params.id;
-    
     models.galleryImagesModel.deleteOne({ _id: imageId }).then(image => {
         res.redirect('/gallery');
     });
@@ -42,9 +51,10 @@ function deleteImage (req, res) {
 function postChangeImage (req, res) {
     const currentImageId = req.params.id;
     const newImageId = req.body.selectedImage;
-    models.galleryImagesModel.update({ _id: currentImageId }, { $pull: { roles: { $in: "HomePageBackground" } }}).then(curImage => {
-        models.galleryImagesModel.update({ _id: newImageId }, { $addToSet: { roles: "HomePageBackground" }}).then(newImage => {
-            res.redirect('/');
+    const role = req.body.selectedPage;
+    models.galleryImagesModel.update({ _id: currentImageId }, { $pull: { roles: { $in: role } }}).then(curImage => {
+        models.galleryImagesModel.update({ _id: newImageId }, { $addToSet: { roles: role }}).then(newImage => {
+            res.redirect('/gallery');
         }).catch(err => {
             console.log(err);
         });
