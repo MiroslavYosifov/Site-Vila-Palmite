@@ -24,7 +24,7 @@
                     <li><a href="/price">ЦЕНИ</a></li>
                     <li><a href="/contacts">КОНТАКТИ</a></li>
                     {{#if currentUser}}
-                        <li><p>Hello {{currentUser.username}}!</p></li>
+                        <li><p>Hello {{currentUser.username}} <i class="fas fa-smile-beam"></i></p></li>
                         <li>
                             <form id="logout-form" action="/logout" method="POST" ></form>
                             <a href="javascript:document.getElementById('logout-form').submit()">ИЗХОД</a>
