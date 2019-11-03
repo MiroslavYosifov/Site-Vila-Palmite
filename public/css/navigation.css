@@ -13,13 +13,14 @@
 .site-header nav ul li {
     margin-left: 0.6em;
     padding: 0 0.4em;
+    text-align: center;
 }
 
 .site-header nav ul li p {
     margin: 0;
     padding: 0;
     font-weight: bold;
-    color: rgb(255, 185, 200);
+    color: rgb(231, 45, 85);
 }
 
 .site-header nav ul li a {
@@ -27,5 +28,5 @@
 }
 
 .site-header nav ul li a:hover {
-    font-weight: bold;
+    text-shadow: 0 0.015em var(--color-body-third-text), 0 -0.015em var(--color-body-third-text) , 0.01em 0 var(--color-body-third-text), -0.01em 0 var(--color-body-third-text);
 }
