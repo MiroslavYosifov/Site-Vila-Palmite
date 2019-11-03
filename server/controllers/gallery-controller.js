@@ -3,6 +3,7 @@ const fs = require('fs');
 
 function getGallery (req, res, next) {
     const user = req.user;
+
     models.galleryImagesModel.find({ roles: { $in: ["GalleryPage"] } }).then(imagesBackground => {
         models.galleryImagesModel.find().then(images => {
             let convertedImagesBackground = imagesBackground.map((val) => {
@@ -18,24 +19,46 @@ function getGallery (req, res, next) {
         }).catch(err => {
             console.log(err);
         });
-        
     }).catch(err => {
         console.log(err);
     });
 }
 
 function postUploadImage(req, res) {
-    const { title } = req.body;
-    if(req.file) {
-        // console.log(req.file.filename);
-        req.body.photo = req.file.filename;
+
+    if(req.file.size > 120000) {
+        res.locals.globalError = "Image size is greater than 120KB";
+        models.galleryImagesModel.find({ roles: { $in: ["GalleryPage"] } }).then(imagesBackground => {
+            models.galleryImagesModel.find().then(images => {
+                let convertedImagesBackground = imagesBackground.map((val) => {
+                    val.photoBufferData = val.photoBufferData.toString('base64');
+                    return val; 
+                });
+                let convertedImages = images.map((val) => {
+                    val.photoBufferData = val.photoBufferData.toString('base64');
+                    return val; 
+                });
+                let convertedImageBackground = convertedImagesBackground[0];
+                res.render('gallery/gallery.hbs', { convertedImageBackground, convertedImages });
+            }).catch(err => {
+                console.log(err);
+            });
+        }).catch(err => {
+            console.log(err);
+        });
+        return;
     }
 
     if (!req.file) {
         res.redirect('/gallery');
         return;
     }
-    
+
+    if(req.file) {
+        console.log(req.file.filename);
+        req.body.photo = req.file.filename;
+    }
+    const { title } = req.body;
     const photoBufferData = fs.readFileSync(`./public/upload/${req.file.filename}`);
     const contentType = req.file.mimetype;
 

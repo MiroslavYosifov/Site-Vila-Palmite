@@ -46,8 +46,6 @@ function postRegister (req, res, next) {
 
     User.create({
         username: reqUser.username,
-        firstName: reqUser.firstName,
-        lastName: reqUser.lastName,
         salt: salt,
         hashedPass: hashedPassword
     }).then(user => {

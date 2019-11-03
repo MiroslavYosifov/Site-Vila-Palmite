@@ -2,9 +2,14 @@
     <section class="main-background-media small">
          <img src="data:{{convertedImageBackground.contentType}};base64, {{convertedImageBackground.photoBufferData}}" alt="Red dot" />
     </section>
+    {{#if globalError}}
+        <section class="error-container">
+            <h6>{{globalError}}</h6>
+        </section>  
+    {{/if}}
     {{#if currentUser}}
     <section class="gallery-navigation">
-        <form action='/gallery/change/image/{{convertedImageBackground._id}}' method="POST">
+        <form action='/gallery/change/image' method="POST">
             <header>
                 <h5>Change background</h5>
             </header>
@@ -31,7 +36,7 @@
         </form>
         <form action='/gallery/upload/image' method="POST" enctype="multipart/form-data">
             <header>
-                <h5>Upload image</h5>
+                <h5>Upload image to 120KB</h5>
             </header>
             <p> 
                 <label for="title">Image title</label>
