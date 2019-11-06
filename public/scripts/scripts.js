@@ -50,10 +50,8 @@ function showHideImage(e) {
 
 
 function imageSlides (e) {
-    
     let modalImage = document.getElementsByClassName('inner')[0].childNodes[1].childNodes[0];
     let isGallery = document.getElementsByClassName('gallery');
-
     if(isGallery.length !== 0) {
         let urlImagesData = [...document
             .getElementsByClassName('gallery')[0]
@@ -78,4 +76,5 @@ function imageSlides (e) {
             }
         }
     }
+   
 }
