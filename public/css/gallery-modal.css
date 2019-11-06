@@ -38,3 +38,24 @@
     font-weight: bold;
     cursor: pointer;
 } 
+
+.arrow {
+    position: absolute;
+    cursor: pointer;
+}
+
+.arrow i {
+    font-size: 1.8em;
+    color: rgb(68, 68, 68);
+}
+
+.arrow.left {
+    top: 48%;
+    left: 0.2%;
+}
+
+.arrow.right {
+    top: 48%;
+    right: 0.2%;
+}
+

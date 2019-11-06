@@ -1,4 +1,11 @@
 <main>
+    <div onclick="showHideImage(event)" class="modal">
+        <div class="inner">
+            <span><img src="#" alt=""></span>
+            <span class="arrow left" onclick="imageSlides(event)"><i class="fas fa-chevron-left"></i></span>
+            <span class="arrow right" onclick="imageSlides(event)"><i class="fas fa-chevron-right"></i></span>
+        </div>
+    </div>
     <section class="main-background-media small">
          <img src="data:{{convertedImageBackground.contentType}};base64, {{convertedImageBackground.photoBufferData}}" alt="Red dot" />
     </section>
@@ -65,7 +72,7 @@
             {{else}}
             {{#each convertedImages}}
             <li onclick="showHideImage(event)">
-                <span><img src="data:{{this.contentType}};base64, {{this.photoBufferData}}" alt="Red dot" /></span>
+                <span><img id="{{this._id}}" src="data:{{this.contentType}};base64, {{this.photoBufferData}}" alt="Red dot" /></span>
             </li>
             {{/each}}
             {{/if}}
