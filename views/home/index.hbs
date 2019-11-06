@@ -1,5 +1,6 @@
 <main>
-    <div onclick="showHideImage(event)" class="modal">
+    {{!-- onclick="showHideImage(event)" --}}
+    <div class="modal">
         <div class="inner">
             <span><img src="#" alt=""></span>
         </div>
@@ -22,37 +23,38 @@
     <section class="segment slides color">
         <ul class="list-cards">
             <li class="card-content">
-                <section onclick="showHideImage(event)" class="card-media-content landscape">
+                <section class="card-media-content landscape">
                     <img src="/images/DSC_0003.JPG" alt="">
                 </section>
             </li>
             <li class="card-content">
-                <section onclick="showHideImage(event)" class="card-media-content landscape">
+                <section class="card-media-content landscape">
                     <img src="/images/DSC_0011.JPG" alt="">
                 </section>
             </li>
             <li class="card-content">
-                <section onclick="showHideImage(event)" class="card-media-content landscape">
+                <section class="card-media-content landscape">
                     <img src="/images/DSC_0027.JPG" alt="">
                 </section>
             </li>
             <li class="card-content">
-                <section onclick="showHideImage(event)" class="card-media-content landscape">
+                <section class="card-media-content landscape">
                     <img src="/images/DSC_0002.JPG" alt="">
                 </section>
             </li>
             <li class="card-content">
-                <section onclick="showHideImage(event)" class="card-media-content landscape">
+                <section class="card-media-content landscape">
                     <img src="/images/DSC_0034.JPG" alt="">
                 </section>
             </li>
             <li class="card-content">
-                <section onclick="showHideImage(event)" class="card-media-content landscape">
+                <section class="card-media-content landscape">
                     <img src="/images/DSC_0037.JPG" alt="">
                 </section>
             </li>
         </ul>
-        <i onclick="moveSlides(event)" class="fas fa-chevron-right"></i>
+       {{!--  onclick="moveSlides(event)" --}}
+        <i id="moveSlidesRightArrow" class="fas fa-chevron-right"></i>
     </section>
     <section class="contacts-content">
         <section class="main-background-map">

@@ -1,9 +1,10 @@
 <main>
-    <div onclick="showHideImage(event)" class="modal">
+    <div class="modal">
         <div class="inner">
+            {{!-- onclick="imageSlides(event)" --}}
             <span><img src="#" alt=""></span>
-            <span class="arrow left" onclick="imageSlides(event)"><i class="fas fa-chevron-left"></i></span>
-            <span class="arrow right" onclick="imageSlides(event)"><i class="fas fa-chevron-right"></i></span>
+            <span class="arrow left"><i class="fas fa-chevron-left"></i></span>
+            <span class="arrow right"><i class="fas fa-chevron-right"></i></span>
         </div>
     </div>
     <section class="main-background-media small">
@@ -63,7 +64,7 @@
         <ul class="gallery">
             {{#if currentUser}}
             {{#each convertedImages}}
-            <li onclick="showHideImage(event)">
+            <li class="gallery-image-content">
                 <span><img src="data:{{this.contentType}};base64, {{this.photoBufferData}}" alt="Red dot" /></span>
                 <p>Title: {{this.title}}</p>
                 <a class="link-button" href="/gallery/delete/image/{{this._id}}">Delete Image</a>
@@ -71,7 +72,7 @@
             {{/each}}
             {{else}}
             {{#each convertedImages}}
-            <li onclick="showHideImage(event)">
+            <li class="gallery-image-content">
                 <span><img id="{{this._id}}" src="data:{{this.contentType}};base64, {{this.photoBufferData}}" alt="Red dot" /></span>
             </li>
             {{/each}}
