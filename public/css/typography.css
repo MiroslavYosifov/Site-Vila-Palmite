@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Arkhip-Regular";
+    src: url("./fonts/Arkhip-Regular.ttf");
+}
+
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i|Merriweather:400,400i,700,700i&display=swap');
 
 *, *:before, *:after {
@@ -8,7 +13,7 @@
 
 html {
     box-sizing: border-box;
-    font: var(--font-size-body, 14px)/1.5 "Fira Sans", Georgia, serif;
+    font: var(--font-size-body, 14px)/1.5 Helvetica, sans-serif;
 }
 
 
@@ -48,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5em;
     letter-spacing: 0.01em;
     font-weight: 100;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arkhip-Regular, sans-serif;
     color: var(--color-h-tags-default);
 }
 

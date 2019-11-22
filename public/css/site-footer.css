@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Arkhip-Regular";
+    src: url("./fonts/Arkhip-Regular.ttf");
+}
+
 .site-footer {
     display: flex;
     align-items: center;
@@ -18,6 +23,7 @@
     width: 100%;
     margin: 0;
     padding: 0 0 0 0.5em;
+    font-family: Arkhip-Regular, sans-serif;
 }
 
 .site-footer section {
