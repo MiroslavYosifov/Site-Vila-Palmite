@@ -4,6 +4,7 @@ const multerConf = require('./multerConf');
 const auth = require('./auth');
 
 
+
 //auth.isInRole('Admin')
 //auth.isAuthenticated
 
@@ -20,7 +21,7 @@ module.exports = (app) => {
     app.post('/login', controllers.users.postLogin);
     app.get('/register', controllers.users.getRegister);
     app.post('/register', controllers.users.postRegister);
-    
+
     app.get('/contacts', controllers.home.contacts);
     app.get('/price', controllers.home.price);
     app.get('/about', controllers.home.about);

@@ -8,7 +8,7 @@
         </div>
     </div>
     <section class="main-background-media small">
-         <img src="data:{{convertedImageBackground.contentType}};base64, {{convertedImageBackground.photoBufferData}}" alt="Red dot" />
+         <img src="{{imageBackground.imageUrl}}" alt="Red dot" />
     </section>
     {{#if globalError}}
         <section class="error-container">
@@ -24,7 +24,7 @@
             <p>
                 <label>Choose image title</label>
                 <select name="selectedImage">
-                {{#each convertedImages}}
+                {{#each images}}
                 <option value="{{this._id}}">{{this.title}}</option>
                 {{/each}} 
                 </select>
@@ -44,7 +44,7 @@
         </form>
         <form action='/gallery/upload/image' method="POST" enctype="multipart/form-data">
             <header>
-                <h5>Upload image to 120KB</h5>
+                <h5>Upload image to 8MB</h5>
             </header>
             <p> 
                 <label for="title">Image title</label>
@@ -63,17 +63,18 @@
     <div class="gallery-content">
         <ul class="gallery">
             {{#if currentUser}}
-            {{#each convertedImages}}
+            {{#each images}}
             <li class="gallery-image-content">
-                <span><img src="data:{{this.contentType}};base64, {{this.photoBufferData}}" alt="Red dot" /></span>
+                {{!-- <span><img src="data:{{this.contentType}};base64, {{this.photoBufferData}}" alt="Red dot" /></span> --}}
+                <span><img src="{{this.imageUrl}}" alt="Red dot" /></span>
                 <p>Title: {{this.title}}</p>
                 <a class="link-button" href="/gallery/delete/image/{{this._id}}">Delete Image</a>
             </li>
             {{/each}}
             {{else}}
-            {{#each convertedImages}}
+            {{#each images}}
             <li class="gallery-image-content">
-                <span><img id="{{this._id}}" src="data:{{this.contentType}};base64, {{this.photoBufferData}}" alt="Red dot" /></span>
+               <span><img src="{{this.imageUrl}}" alt="Red dot" /></span>
             </li>
             {{/each}}
             {{/if}}

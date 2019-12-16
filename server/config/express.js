@@ -14,7 +14,7 @@ module.exports = (app) => {
     app.use(session({ secret: 'neshto-taion432@4534', resave: false, saveUninitialized: false }));
     app.use(passport.initialize());
     app.use(passport.session());
-
+    
     app.use((req, res, next) => {
         if (req.user) {
             res.locals.currentUser = req.user

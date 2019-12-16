@@ -1,21 +1,13 @@
 const models = require('../models/index');
+const cloudinary = require('cloudinary').v2;
 const fs = require('fs');
 
 function getGallery (req, res, next) {
     const user = req.user;
-
-    models.galleryImagesModel.find({ roles: { $in: ["GalleryPage"] } }).then(imagesBackground => {
+    models.galleryImagesModel.find({ roles: { $in: ["GalleryPage"] } }).then( imagesBackground => {
+        let imageBackground = imagesBackground[0];
         models.galleryImagesModel.find().then(images => {
-            let convertedImagesBackground = imagesBackground.map((val) => {
-                val.photoBufferData = val.photoBufferData.toString('base64');
-                return val; 
-            });
-            let convertedImages = images.map((val) => {
-                val.photoBufferData = val.photoBufferData.toString('base64');
-                return val; 
-            });
-            let convertedImageBackground = convertedImagesBackground[0];
-            res.render('gallery/gallery.hbs', { convertedImageBackground, convertedImages });
+            res.render('gallery/gallery.hbs', { imageBackground, images });
         }).catch(err => {
             console.log(err);
         });
@@ -25,48 +17,25 @@ function getGallery (req, res, next) {
 }
 
 function postUploadImage(req, res) {
+    const title = req.body.title;
 
-    if(req.file.size > 120000) {
-        res.locals.globalError = "Image size is greater than 120KB";
-        models.galleryImagesModel.find({ roles: { $in: ["GalleryPage"] } }).then(imagesBackground => {
-            models.galleryImagesModel.find().then(images => {
-                let convertedImagesBackground = imagesBackground.map((val) => {
-                    val.photoBufferData = val.photoBufferData.toString('base64');
-                    return val; 
-                });
-                let convertedImages = images.map((val) => {
-                    val.photoBufferData = val.photoBufferData.toString('base64');
-                    return val; 
-                });
-                let convertedImageBackground = convertedImagesBackground[0];
-                res.render('gallery/gallery.hbs', { convertedImageBackground, convertedImages });
+    if (!req.file) { res.redirect('/gallery'); return; }
+
+    if(req.file) {
+        const imagePath = req.file.path;
+
+        cloudinary.uploader.upload(imagePath, function(error, resImage) {
+
+            if(error) { console.log('ERROR:::', error) }
+            const resImageUrl = resImage.url;
+
+            models.galleryImagesModel.create({ title, imageUrl: resImageUrl }).then(image => {
+                res.redirect('/gallery');
             }).catch(err => {
                 console.log(err);
             });
-        }).catch(err => {
-            console.log(err);
         });
-        return;
     }
-
-    if (!req.file) {
-        res.redirect('/gallery');
-        return;
-    }
-
-    if(req.file) {
-        console.log(req.file.filename);
-        req.body.photo = req.file.filename;
-    }
-    const { title } = req.body;
-    const photoBufferData = fs.readFileSync(`./public/upload/${req.file.filename}`);
-    const contentType = req.file.mimetype;
-
-    models.galleryImagesModel.create({ title, photoBufferData: photoBufferData, contentType }).then(image => {
-        res.redirect('/gallery');
-    }).catch(err => {
-        console.log(err);
-    });
 }
 
 function deleteImage (req, res) {

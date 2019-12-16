@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", x => {
-
+    
     if(document.getElementById('moveSlidesRightArrow')){
         document.getElementById('moveSlidesRightArrow').addEventListener('click', moveSlides);
     }
