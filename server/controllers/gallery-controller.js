@@ -18,30 +18,38 @@ function getGallery (req, res, next) {
 
 function postUploadImage(req, res) {
     const title = req.body.title;
-
-    if (!req.file) { res.redirect('/gallery'); return; }
+    console.log(req.file.size);
+    
+    if (!req.file || req.file.size > 8000000) { res.redirect('/gallery'); return; }
 
     if(req.file) {
         const imagePath = req.file.path;
 
         cloudinary.uploader.upload(imagePath, function(error, resImage) {
-
             if(error) { console.log('ERROR:::', error) }
             const resImageUrl = resImage.url;
-
-            models.galleryImagesModel.create({ title, imageUrl: resImageUrl }).then(image => {
+            const cloudinaryImageId = resImage.public_id;
+            console.log(cloudinaryImageId);
+            console.log('RESIMAGEUPLOAD: ',resImage);
+            
+            models.galleryImagesModel.create({ title, imageUrl: resImageUrl, cloudinaryImageId }).then(image => {
                 res.redirect('/gallery');
             }).catch(err => {
                 console.log(err);
             });
+            
         });
     }
 }
 
 function deleteImage (req, res) {
     const imageId = req.params.id;
-    models.galleryImagesModel.deleteOne({ _id: imageId }).then(image => {
-        res.redirect('/gallery');
+    models.galleryImagesModel.findOneAndDelete({ _id: imageId }).then(deletedImage => {
+        console.log('DELETEDIMAGE: ',deletedImage);
+        cloudinary.uploader.destroy(deletedImage.cloudinaryImageId, function(error, resImage) {
+            console.log('resDELETEDIMAGFE: ',resImage);
+            res.redirect('/gallery');
+        });
     });
 }
 
