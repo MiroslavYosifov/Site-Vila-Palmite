@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", x => {
+
+    if(document.getElementsByClassName('navigation-button')){
+        document.getElementsByClassName('navigation-button')[0].addEventListener('click', showNavBar);
+    }
     
     if(document.getElementById('moveSlidesRightArrow')){
         document.getElementById('moveSlidesRightArrow').addEventListener('click', moveSlides);
@@ -32,6 +36,16 @@ document.addEventListener("DOMContentLoaded", x => {
             .map(image => {image.addEventListener('click', showHideImage)});
     }
 });
+
+function showNavBar (e) {
+    let siteNav = document.getElementById('site-nav');
+    
+    if(siteNav.style.display === "none" || siteNav.style.display === "") {
+        siteNav.style.display = "block";
+    } else {
+        siteNav.style.display = "none";
+    }  
+}
 
 let clicks = 1;
 

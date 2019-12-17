@@ -23,6 +23,58 @@
         font-size: 3em;
     }
 
+    /* NAVIGATION */
+
+    div .site-header .site-title {
+        display: none;
+    }
+
+    .navigation-button {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navigation-button i {
+        font-size: 3.6em;
+        color: white;
+    }
+
+    .site-header nav {
+        display: none;
+        background: var(--color-fields-main-background);
+        width: 50%;
+        position: absolute;
+        top: 100%; left: 0;
+        padding: 0;
+    }
+
+    .site-header nav ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+    
+    div .site-header nav ul li {
+        width: 100%;
+        margin-left: 0;
+        padding: 0.6em 0 0.6em 2em;
+        border: 1px solid lightgray;
+        border-bottom: none;
+        text-align: left;
+    }
+
+    div .site-header nav ul li:last-child {
+        border-bottom: 1px solid lightgray;
+    }
+
+    div .site-header nav ul li a {
+        font-size: 1.4em;
+    }
+
     /* MAP And Contacts  */
 
     main .contacts-content {
@@ -50,7 +102,6 @@
     }
 
     /* GALLERY */
-
     .gallery-content .gallery {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -132,6 +183,62 @@
 }
 
 @media ( min-width: 768px ) {
+
+    /* NAVIGATION */
+
+    div .site-header .site-title {
+        display: flex;
+    }
+
+    .navigation-button {
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navigation-button i {
+        font-size: 3.6em;
+        color: white;
+    }
+
+    .site-header nav {
+        display: block;
+        background: var(--color-fields-main-background);
+        width: 60%;
+        position: relative;
+        top: 100%; left: 0;
+        padding: 0;
+        margin: 0 0 0 auto;
+    }
+
+    .site-header nav ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+    
+    div .site-header nav ul li {
+        width: auto;
+        margin-left: 0.6em;
+        padding: 0 0.4em;
+        border: none;
+        text-align: center;
+    }
+
+    div .site-header nav ul li:first-child {
+        margin-left: auto;
+    }
+
+    div .site-header nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    div .site-header nav ul li a {
+        font-size: 1em;
+    }
 
     /* SLIDES HOME PAGE */
     main .segment .list-cards .card-content {
