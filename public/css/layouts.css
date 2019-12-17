@@ -11,6 +11,28 @@
 
 
 @media ( min-width: 321px ) {
+
+    /* MAIN BACKGROUND */
+
+    main .main-background-media:before {
+        padding-top: 100vh;
+    }
+
+    main .main-background-media img {
+        width: auto;
+        height: 100%;
+    }
+
+    main .main-background-media.small:before {
+        padding-top: 50vh;
+    }
+
+    main .main-background-media.small img {
+        width: auto;
+        height: 100%;
+        top: 0;
+    }
+
     main .segment .list-cards .card-content {
         width: 100%;
     } 
@@ -183,6 +205,25 @@
 }
 
 @media ( min-width: 768px ) {
+
+    /* MAIN BACKGROUND */
+    main .main-background-media:before {
+        padding-top: 60%;
+    }
+
+    main .main-background-media img {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-background-media.small:before {
+        padding-top: 35%;
+    }
+
+    main .main-background-media.small img {
+        width: 100%;
+        height: auto;
+    }
 
     /* NAVIGATION */
 

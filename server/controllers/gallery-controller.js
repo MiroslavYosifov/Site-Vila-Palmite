@@ -20,7 +20,11 @@ function postUploadImage(req, res) {
     const title = req.body.title;
     console.log(req.file.size);
     
-    if (!req.file || req.file.size > 8000000) { res.redirect('/gallery'); return; }
+    if (!req.file || req.file.size > 8000000) { 
+        console.log('BIGGER SIZE');
+        
+        res.redirect('/gallery'); return; 
+    }
 
     if(req.file) {
         const imagePath = req.file.path;
