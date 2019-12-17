@@ -8,3 +8,129 @@
 .site-content {
     height: stretch;
 }
+
+
+@media ( min-width: 321px ) {
+    main .segment .list-cards .card-content {
+        width: 100%;
+    } 
+
+    section .main-background-text h1 {
+        font-size: 5em;
+    }
+
+    section .main-background-text h2 {
+        font-size: 3em;
+    }
+
+    /* MAP And Contacts  */
+
+    main .contacts-content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    main > section.contacts-content > section.main-background-map {
+        width: 100%;
+        height: 100vh;
+    }
+
+    main > section.contacts-content > section.contacts-info {
+        width: 100%;
+    }
+
+    main > section.contacts-content > section.contacts-info > ul > li {
+        padding: 0 1em;
+    }
+
+    .contacts-info header h4,
+    main > section.contacts-content > section.contacts-info > ul > li > i,
+    main > section.contacts-content > section.contacts-info > ul > li > p {
+        font-size: 2.4em;
+    }
+
+    /* GALLERY */
+
+    .gallery-content .gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+
+@media ( min-width: 480px ) {
+
+    /* MAIN BACKGROUND TEXT */
+    section .main-background-text h1 {
+        font-size: 6em;
+    }
+
+    section .main-background-text h2 {
+        font-size: 4em;
+    }
+
+    /* MAP And Contacts  */
+    main > section.contacts-content > section.contacts-info > ul > li {
+        padding: 0 2em;
+    }
+
+    .contacts-info header h4,
+    main > section.contacts-content > section.contacts-info > ul > li > i,
+    main > section.contacts-content > section.contacts-info > ul > li > p {
+        font-size: 3em;
+    }
+   
+}
+
+@media ( min-width: 768px ) {
+
+    /* SLIDES HOME PAGE */
+    main .segment .list-cards .card-content {
+        width: 33%;
+    }
+
+    section .main-background-text h1 {
+        font-size: 7em;
+    }
+
+    section .main-background-text h2 {
+        font-size: 5em;
+    }
+
+    /* MAP And Contacts  */
+
+    main .contacts-content {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    main > section.contacts-content > section.main-background-map {
+        width: 70%;
+        height: 100vh;
+    }
+
+    main > section.contacts-content > section.contacts-info {
+        width: 30%;
+    }
+
+    section .main-background-text h2 {
+        font-size: 2em;
+    }
+
+    main > section.contacts-content > section.contacts-info > ul > li {
+        padding: 0;
+    }
+
+    .contacts-info header h4 {
+        font-size: 1.4em;
+    }
+
+    main > section.contacts-content > section.contacts-info > ul > li > i,
+    main > section.contacts-content > section.contacts-info > ul > li > p {
+        font-size: 1em;
+    }
+
+     /* GALLERY */
+    .gallery-content .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

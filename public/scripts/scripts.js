@@ -42,7 +42,7 @@ function moveSlides(e){
     if( window.screen.width >= 1024 ) {
         slidesToMove = 2;
     } else if ( window.screen.width >= 768 ) {
-        slidesToMove = 1;
+        slidesToMove = 2;
     }
 
     for (let i = 0; i < dataSlides.length; i++) {

@@ -37,7 +37,7 @@ function postUploadImage(req, res) {
             }).catch(err => {
                 console.log(err);
             });
-            
+
         });
     }
 }
@@ -47,7 +47,7 @@ function deleteImage (req, res) {
     models.galleryImagesModel.findOneAndDelete({ _id: imageId }).then(deletedImage => {
         console.log('DELETEDIMAGE: ',deletedImage);
         cloudinary.uploader.destroy(deletedImage.cloudinaryImageId, function(error, resImage) {
-            console.log('resDELETEDIMAGFE: ',resImage);
+            console.log('resDELETEDIMAGFE: ', resImage);
             res.redirect('/gallery');
         });
     });
