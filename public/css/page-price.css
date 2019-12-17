@@ -13,10 +13,20 @@
     font-weight: bold;
 }
 
+.tables-content {
+  
+}
+
 .price-content table {
-    margin: 0 auto 4em auto;
-    text-align: center;
-    border-collapse: collapse;
+ 
+}
+
+.price-content table:first-child {
+    
+}
+
+.price-content table:last-child {
+    
 }
 
 .price-content table tr {

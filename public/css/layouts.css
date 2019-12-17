@@ -55,6 +55,51 @@
         grid-template-columns: repeat(1, 1fr);
     }
 
+    /* ABOUT PAGE */
+
+    main .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 3em;
+    }
+    
+    main .about-content > .text-content {
+        width: 100%;
+        padding: 0;
+    }
+    
+    main .about-content > .media-content {
+        width: 100%;
+        padding: 0;
+    }
+
+    /* PRICE PAGE */
+    
+    .tables-content { 
+        width: 70%;
+        margin: 0 auto 4em auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .price-content table {
+        width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+    }
+
+    .price-content table tbody tr {
+        font-size: 1.8em;
+    }
+    
+    .price-content table:first-child {
+        margin-left: 0;
+    }
+    
+    .price-content table:last-child {
+        margin-right: 0;
+    }
+
 }
 
 @media ( min-width: 480px ) {
@@ -78,6 +123,11 @@
     main > section.contacts-content > section.contacts-info > ul > li > p {
         font-size: 3em;
     }
+
+    /* PRICE PAGE */
+    .tables-content { 
+        width: 60%;
+    }
    
 }
 
@@ -92,7 +142,7 @@
         font-size: 7em;
     }
 
-    section .main-background-text h2 {
+    main section .main-background-text h2 {
         font-size: 5em;
     }
 
@@ -132,5 +182,50 @@
      /* GALLERY */
     .gallery-content .gallery {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* ABOUT PAGE */
+
+    main .about-content {
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 4em;
+    }
+    
+    main .about-content > .text-content {
+        width: 50%;
+    }
+    
+    main .about-content > .media-content {
+        width: 50%;
+        padding-left: 4em;
+    }
+
+    /* PRICE PAGE */
+
+    .tables-content {
+        width: 100%;
+        margin: 0 0 4em 0;
+        margin-bottom: 4em;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    
+    .price-content table {
+        width: auto;
+        text-align: center;
+        border-collapse: collapse;
+    }
+
+    .price-content table tbody tr {
+        font-size: 1.2em;
+    }
+    
+    .price-content table:first-child {
+        margin-left: auto;
+    }
+    
+    .price-content table:last-child {
+        margin-right: auto;
     }
 }
