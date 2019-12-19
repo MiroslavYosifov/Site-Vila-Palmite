@@ -12,6 +12,10 @@
 
 @media ( min-width: 321px ) {
 
+    .text-content p  {
+        font-size: 1.4em;
+    }
+
     /* MAIN BACKGROUND */
     main .main-background-media:before {
         padding-top: 100vh;
@@ -181,7 +185,7 @@
 
     div .site-footer .site-title {
         width: 100%;
-        font-size: 1.8em;
+        font-size: 1.6em;
         margin-bottom: 0.6em;
     }
 
@@ -200,7 +204,7 @@
 
     div .site-footer section:nth-child(2) p {
         width: 100%;
-        font-size: 1.8em;
+        font-size: 1.6em;
         margin-bottom: 0.6em;
         margin-left: 0;
     }
@@ -256,7 +260,10 @@
 }
 
 @media ( min-width: 768px ) {
-
+    
+    .text-content p  {
+        font-size: 1em;
+    }
 
     /* NAVIGATION */
 
