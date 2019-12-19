@@ -22,7 +22,6 @@ function postUploadImage(req, res) {
     
     if (!req.file || req.file.size > 8000000) { 
         console.log('BIGGER SIZE');
-        
         res.redirect('/gallery'); return; 
     }
 
