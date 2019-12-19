@@ -230,6 +230,7 @@
     main .main-background-media.small img {
         width: 100%;
         height: auto;
+        top: -50%;
     }
 
     /* MAIN BACKGROUND TEXT */
