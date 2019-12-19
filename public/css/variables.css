@@ -6,7 +6,7 @@
     --font-size-body-mid: 14px;
     --font-size-body-larger: 16px;
     --font-size-body-big: 18px;
-    --font-size-body-huge: 26px;
+    --font-size-body-huge: 24px;
 
     --layout-main-width: 100vw;
     --layout-main-height: 100vh;
@@ -17,7 +17,8 @@
     --color-body-main-text: #000000;
     --color-body-second-text: #316F04;
     --color-body-third-text: white;
-    --color-fields-main-background: #316F04;
+    /* --color-fields-main-background: #316F04; */
+    --color-fields-main-background: blue;
     --color-fields-second-background: #97B680;
     --color-fields-after-background: rgba(255, 255, 255, 0.6);
 
